@@ -256,6 +256,38 @@ Azure Reservations are purchased for a specific VM size, region, and OS. They ca
 
 **AWS is ~$5.28/month cheaper** for equivalent Linux workloads on On-Demand pricing — a ~10.5% advantage at this scale.
 
+---
+
+### Service Category Percentage Differences (US East, Linux, On-Demand)
+
+| Service Category | AWS Cost | Azure Cost | $ Difference | % Difference |
+|---|---|---|---|---|
+| Compute (VM/EC2) | $30.37 | $30.37 | $0.00 | **0% — identical** |
+| OS Disk Storage | $4.00 | $9.61 | $5.61 | **Azure 140.3% more expensive** |
+| Object Storage (S3/Blob) | $2.39 | $1.89 | $0.50 | **Azure 20.9% cheaper** |
+| Egress (100 GB out) | $8.10 | $8.27 | $0.17 | **Azure 2.1% more expensive** |
+| **Total** | **$44.86** | **$50.14** | **$5.28** | **AWS 10.5% cheaper overall** |
+
+> **Key insight:** Compute is priced identically — the entire AWS cost advantage comes from storage tier structure. Azure Managed Disks have a 128 GiB minimum tier, making small-disk workloads disproportionately expensive on Azure.
+
+---
+
+### Regional Price Analysis Summary
+
+> 📄 See full regional breakdown: [regional-price-analysis.md](./regional-price-analysis.md)
+
+| Region | AWS Total | Azure Total | $ Difference | % Difference |
+|---|---|---|---|---|
+| **US East** | $44.86 | $50.14 | $5.28 | AWS **10.5%** cheaper |
+| **Europe (Ireland/Netherlands)** | $49.12 | $57.87 | $8.75 | AWS **15.1%** cheaper |
+| **Asia Pacific (Singapore)** | $57.84 | $60.99 | $3.15 | AWS **5.2%** cheaper |
+| **Average across all regions** | **$50.61** | **$56.33** | **$5.72** | AWS **10.2%** cheaper |
+
+**Regional highlights:**
+- **US East** is the cheapest region on both platforms — best default for cost-sensitive deployments
+- **Europe** adds a ~10–15% premium on both platforms due to GDPR compliance infrastructure and energy costs
+- **Asia Pacific egress** is the key outlier — AWS charges $0.12/GB vs Azure's $0.087/GB, making Azure cheaper for egress-heavy apps serving Asian users
+
 ### Which Provider is More Cost-Effective?
 
 | Scenario | Recommended Provider | Reason |
