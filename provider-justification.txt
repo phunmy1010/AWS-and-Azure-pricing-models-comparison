@@ -1,0 +1,48 @@
+PROVIDER CHOICE JUSTIFICATION — BUSINESS CONTEXT ANALYSIS
+===========================================================
+Author: Joshua Blessing | FE/24/161412576
+Word count: ~300 words
+
+SCENARIO 1: LINUX-BASED STARTUP (e.g., QuickCart — Nigerian E-Commerce App)
+-----------------------------------------------------------------------------
+
+For a Linux-based startup with no existing Microsoft licensing commitments, 
+AWS is the recommended cloud provider.
+
+At identical specifications (2 vCPU / 4 GB RAM / 50 GB SSD / 100 GB object 
+storage / 100 GB monthly egress), AWS costs $44.86/month compared to Azure's 
+$50.14/month — a 10.5% difference that compounds significantly over 12 months 
+($538.32 vs $601.68 annually). The cost gap widens further when storage is 
+considered: AWS gp3 EBS bills per GB ($4.00 for 50 GB) whereas Azure Managed 
+Disks start at a 128 GiB tier minimum ($9.61), penalising small deployments.
+
+AWS also offers greater flexibility through Compute Savings Plans, which 
+automatically apply across instance families and regions without requiring 
+upfront commitment to a specific VM size. For an early-stage startup that 
+may need to resize frequently, this operational flexibility has real value 
+beyond the monthly cost savings.
+
+SCENARIO 2: MICROSOFT-CENTRIC ENTERPRISE
+-----------------------------------------
+
+For an established enterprise running Windows Server workloads under an 
+active Software Assurance agreement, Azure is the recommended provider.
+
+Azure Hybrid Benefit transforms the economics entirely. A Windows Server 
+deployment that would cost $0.096/hr on standard Azure Pay-As-You-Go drops 
+to $0.0576/hr with HB applied — and to approximately $0.039/hr when combined 
+with a 1-Year Reserved Instance. This stacked discount (HB + RI) makes Azure 
+Windows workloads cheaper than equivalent AWS Windows On-Demand pricing.
+
+Beyond raw cost, enterprises already invested in Microsoft 365, Active 
+Directory, and Intune benefit from native Azure integration at no additional 
+licensing cost. Azure Entra ID (formerly Azure AD) authentication, Azure 
+DevOps pipelines, and Microsoft Defender for Cloud are natural extensions of 
+an existing Microsoft ecosystem — reducing operational overhead and total cost 
+of ownership beyond the VM price alone.
+
+CONCLUSION
+----------
+Neither provider is universally cheaper. AWS wins for Linux-first, 
+greenfield workloads; Azure wins for Microsoft-licensed enterprises leveraging 
+Hybrid Benefit. The right choice is always workload-specific.
